@@ -26,7 +26,7 @@ public class TaskController {
     @PostMapping("/saveTask")
     public ResponseEntity<Task> saveTask(@RequestBody Task task) {
         Task savedTask = taskRepository.save(task);
-        return ResponseEntity.ok(savedTask);
+        return ResponseEntity.ok("savedTask");
     }
 
     @PutMapping("/changeStatus")
