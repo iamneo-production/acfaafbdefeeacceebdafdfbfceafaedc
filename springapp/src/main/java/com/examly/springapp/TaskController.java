@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("")
 public class TaskController {
     @Autowired
     private TaskRepository taskRepository;
@@ -26,7 +26,7 @@ public class TaskController {
     @PostMapping("/saveTask")
     public ResponseEntity<Task> saveTask(@RequestBody Task task) {
         Task savedTask = taskRepository.save(task);
-        return ResponseEntity.ok("savedTask");
+        return ResponseEntity.ok(savedTask);
     }
 
     @PutMapping("/changeStatus")
